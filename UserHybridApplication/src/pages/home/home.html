@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    <p style="color: white; text-align: center;">Smart City Bus</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<div #map #marker id="map" style="width:100%;height:40%;"></div>
+<ion-list>
+<ion-item *ngFor="let item of routes" (click) = "navigate(item)">
+<div style="background-color: #FBCEB1">
+<div style="float: left; color:#8E4585">
+<h1>{{item.routeId}}</h1>
+<p>{{item.towards}}</p>
+</div>
+<div style="float: right; color:#8E4585">
+<h1>{{item.eta}}</h1>
+<p>@ {{item.at}}</p>
+</div>
+</div>
+</ion-item>
+</ion-list>
+</ion-content>
