@@ -1,0 +1,32 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#divSelection{
+position: absolute;
+top:0%;
+left: 0%;
+height: 100%;
+width: 400px;
+padding: 2%;
+z-index: 1;
+overflow: hidden;
+}
+.title{
+  text-align: center;
+}
+.routes{
+  overflow: auto;
+  height: 100%;
+  width:  387px;
+  margin-top: 10%;
+}
+
+.sebm-google-map-container {
+  height: 100vh;
+}
+.clic{
+  cursor: pointer
+}

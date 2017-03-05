@@ -1,0 +1,26 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div *ngIf="ready">
+  <div id="divSelection">
+    <div class="title">
+      <h1><span class="label label-primary">{{title}}</span>
+      </h1>
+    </div>
+    <div class="routes">
+      <div class="panel panel-info" *ngFor="let route of data">
+        <div class="panel-heading"><span class=" clic label label-primary" (click)="setCurrentRouteSelection(route)">{{route.routeId}}</span></div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+  </div>
+  <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapCSS>
+    <sebm-google-map-polyline *ngFor="let points of currentRouteSelection; let i = index;">
+      <sebm-google-map-polyline-point [latitude]="points.latA" [longitude]="points.lngA">
+      </sebm-google-map-polyline-point>
+      <sebm-google-map-polyline-point [latitude]="points.lat" [longitude]="points.lng">
+      </sebm-google-map-polyline-point>
+    </sebm-google-map-polyline>
+  </sebm-google-map>
+</div>
