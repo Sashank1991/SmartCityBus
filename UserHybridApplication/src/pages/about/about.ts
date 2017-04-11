@@ -19,6 +19,7 @@ export class AboutPage {
   	map: any;
 	routeId: any;
 	data: any;
+	stopName: any;
 	stopsPassed: any[] = [];
 	stopsAhead: any[] = [];
 
@@ -26,9 +27,9 @@ export class AboutPage {
 
   ionViewDidLoad() {
    
-    console.log(this.navParams.get("data"));
     this.data = this.navParams.get("data");
     this.routeId = this.data.routeId;
+    this.stopName = this.data.stopName;
 
     let latLng = new google.maps.LatLng(52,-112.72);
       
@@ -62,8 +63,8 @@ export class AboutPage {
 
   getIndex() {
   	 for (var i = 0; i < this.data.stop_seq.length; i ++) {
-    	if (this.data.stop.lat == this.data.stop_seq[i].loc.lat && this.data.stop.lon == this.data.stop_seq[i].loc.lon) {
-    	return i;
+    	if (this.data.stopId == this.data.stop_seq[i].stopId) {
+    	  return i;
     	}
     	this.stopsPassed.push(this.data.stop_seq[i].stopName);
     }
