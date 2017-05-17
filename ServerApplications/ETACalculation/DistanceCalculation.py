@@ -1,7 +1,8 @@
-import math
-from  math import pi,sqrt,sin,cos,atan2
+from  math import pi, sqrt, sin, cos, atan2
+
 
 def distance_calculation(pos1, pos2):
+    #print pos1,pos2
     lat1 = float(pos1['lat'])
     long1 = float(pos1['lon'])
     lat2 = float(pos2['lat'])
@@ -20,13 +21,10 @@ def distance_calculation(pos1, pos2):
     return mi
 
 
-
-
-
-if __name__=="__main__":
-	start_position=raw_input("enter the starting location  ")
-	end_position=raw_input("enter the ending location  ")
-	#start_position={'lat':37.44377,'lon':-122.16603}
-	#end_position={'lat':37.32773,'lon':-121.82076}
-	result=distance_calculation(start_position,end_position)
-	print result
+if __name__ == "__main__":
+    start_position = raw_input("enter the starting location  ")
+    end_position = raw_input("enter the ending location  ")
+    # start_position={'lat':37.44377,'lon':-122.16603}
+    # end_position={'lat':37.32773,'lon':-121.82076}
+    result = distance_calculation(start_position, end_position)
+    print result

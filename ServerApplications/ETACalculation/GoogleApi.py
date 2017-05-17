@@ -10,12 +10,13 @@ def format_change(time):
 
 
 def json_string(position):
-        var_position={"lng":position['lon']}
-        position.update(var_position)
-        replaced_value=position.pop('lon',None)
-        api_key="AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
-        client=googlemaps.Client(api_key)
-        return convert.latlng(position)
+        # print position
+        var_position = {"lng": position['lon'], "lat": position['lat']}
+        # position.update(var_position)
+        # replaced_value = position.pop('lon', None)
+        api_key = "AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
+        client = googlemaps.Client(api_key)
+        return convert.latlng(var_position)
 
 
 
@@ -26,7 +27,7 @@ def eta_value(start_coordinates,end_coordinates):
         end_coordinates=json_string(end_coordinates)
         answer=client.distance_matrix(start_coordinates,end_coordinates)
         try:
-                return format_change(answer["rows"][0]["elements"][0]["duration"]["text"])
+                return format_change(str(answer["rows"][0]["elements"][0]["duration"]["text"]))
         except:
                 return "no route"
 
