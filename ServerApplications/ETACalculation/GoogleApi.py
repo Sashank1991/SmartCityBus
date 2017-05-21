@@ -14,14 +14,14 @@ def json_string(position):
         var_position = {"lng": position['lon'], "lat": position['lat']}
         # position.update(var_position)
         # replaced_value = position.pop('lon', None)
-        api_key = "AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
+        api_key = "AIzaSyAJfU73lg9Th2JqeujeT857cpxjXOjYso"
         client = googlemaps.Client(api_key)
         return convert.latlng(var_position)
 
 
 
 def eta_value(start_coordinates,end_coordinates):
-        api_key="AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
+        api_key="AIzaSyAJfU73lg9Th2JqeujeT857cpxjXOjYso"
         client=googlemaps.Client(api_key)
         start_coordinates=json_string(start_coordinates)
         end_coordinates=json_string(end_coordinates)

@@ -14,13 +14,13 @@ def json_string(position):
     var_position = {"lng": position['lon']}
     position.update(var_position)
     replaced_value = position.pop('lon', None)
-    api_key = "AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
+    api_key = "AIzaSyAJfU73lg9Th2JqeujeT1857pxjXOjYso"
     client = googlemaps.Client(api_key)
     return convert.latlng(position)
 
 def main():
     global api_key
-    api_key= "AIzaSyAJfU73lg9Th2JqeujeT1857cpxjXOjYso"
+    api_key= "AIzaSyAJfU73lg9Th2JqeujeT1857pxjXOjYso"
 
 
 if __name__ == '__main__':
